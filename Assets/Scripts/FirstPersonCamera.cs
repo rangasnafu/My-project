@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 20f;
     public Transform playerBody;
     public Transform cameraTransform;
     public float crouchHeight = 0.5f;
@@ -17,9 +18,22 @@ public class FirstPersonCamera : MonoBehaviour
     private bool isCrouching = false;
     private Vector3 cameraVelocity = Vector3.zero;
 
+    //public GameObject gameOverUI;
+    public GameObject youWinUI;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        //if (gameOverUI.activeSelf)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //}
+        if (youWinUI.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+
         cameraOriginalPosition = cameraTransform.localPosition;
         cameraCrouchPosition = cameraTransform.localPosition - new Vector3(0f, crouchHeight, 0f);
 

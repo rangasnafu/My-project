@@ -26,7 +26,7 @@ public class FirstPersonController : MonoBehaviour
     private bool isCrouching;
 
     private bool canMove = true; // Flag to track if the player is allowed to move
-    //private bool isCaught = false; // Flag to track if the player has been caught
+    //private bool isCaught = false; // Flag to track if the player has been caught 
 
     public PlayerSoundManager soundManager;
 
@@ -156,6 +156,13 @@ public class FirstPersonController : MonoBehaviour
             Time.timeScale = 1f;
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("Menu");
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Win")
+        {
+            // Set Cursor.lockState to CursorLockMode.None
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

@@ -3551,6 +3551,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6042005752263545031, guid: 2e3e2f9525c7f8e4aab7746a70160bb8, type: 3}
+      propertyPath: youWinUI
+      value: 
+      objectReference: {fileID: 1700030332}
+    - target: {fileID: 6042005752263545031, guid: 2e3e2f9525c7f8e4aab7746a70160bb8, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 963194228}
