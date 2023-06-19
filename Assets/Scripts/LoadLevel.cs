@@ -81,7 +81,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
             openDoorUI.SetActive(true);
         }
     }

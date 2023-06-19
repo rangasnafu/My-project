@@ -25,6 +25,8 @@ public class FirstPersonController : MonoBehaviour
     private bool isSprinting;
     private bool isCrouching;
 
+    //private bool isCaught = false;
+
     private bool canMove = true; // Flag to track if the player is allowed to move
     //private bool isCaught = false; // Flag to track if the player has been caught
 
@@ -156,6 +158,13 @@ public class FirstPersonController : MonoBehaviour
             Time.timeScale = 1f;
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("Menu");
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+
+        if (SceneManager.GetActiveScene().name == "Win")
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

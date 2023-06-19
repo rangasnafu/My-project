@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -17,9 +18,15 @@ public class FirstPersonCamera : MonoBehaviour
     private bool isCrouching = false;
     private Vector3 cameraVelocity = Vector3.zero;
 
+    public GameObject youWinUI;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        if (youWinUI.activeSelf)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
         cameraOriginalPosition = cameraTransform.localPosition;
         cameraCrouchPosition = cameraTransform.localPosition - new Vector3(0f, crouchHeight, 0f);
 
