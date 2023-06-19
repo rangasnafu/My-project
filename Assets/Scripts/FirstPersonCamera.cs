@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 20f;
     public Transform playerBody;
     public Transform cameraTransform;
     public float crouchHeight = 0.5f;
