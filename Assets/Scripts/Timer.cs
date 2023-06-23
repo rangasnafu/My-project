@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     float currentTime = 0f;
     float startingTime = 10.4f;
 
-    public GameObject gameOverUI;
+    public GameObject gameOverTimeUI;
 
     public string newGameScene;
 
@@ -28,15 +28,20 @@ public class Timer : MonoBehaviour
         currentTime -= Time.deltaTime;
         countdownText.text = currentTime.ToString("0");
 
+        if (currentTime <=3.5)
+        {
+            countdownText.color = Color.red;
+        }
+
         if (currentTime < 0)
         {
             Debug.Log("GameOver!");
             Time.timeScale = 0f;
-            gameOverUI.SetActive(true);
+            gameOverTimeUI.SetActive(true);
 
         }
 
-        if (gameOverUI.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if (gameOverTimeUI.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
             Time.timeScale = 1f;
             Scene scene = SceneManager.GetActiveScene();
