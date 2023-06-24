@@ -11,15 +11,21 @@ public class Timer : MonoBehaviour
     float startingTime = 10.4f;
 
     public GameObject gameOverTimeUI;
+    public GameObject gameOverUI;
 
     public string newGameScene;
 
     [SerializeField] TMP_Text countdownText;
 
+    public AudioSource audioSource;
+    public AudioClip timer;
+
     // Start is called before the first frame update
     void Start()
     {
         currentTime = startingTime;
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -47,20 +53,20 @@ public class Timer : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("Level1");
         }
-        //if (gameOverUI.activeSelf && Input.GetKeyDown(KeyCode.R))
-        //{
-        //Time.timeScale = 1f;
-        //Scene scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(scene.name);
-        // }
-
-        // if (gameOverUI.activeSelf && Input.GetKeyDown(KeyCode.Space))
-        // {
-        //Time.timeScale = 1f;
-        //SceneManager.LoadScene(newGameScene);
-        // }
+      
 
     }
 
+    public void TimerSound()
+    {
+        audioSource.clip = timer;
+        audioSource.Play();
+
+        //if (Time.timeScale = 0f)
+        //{
+            //Destroy(gameObject);
+        //}
+        
+    }
 
 }

@@ -44,4 +44,9 @@ public class MusicManager : MonoBehaviour
     {
         PlayTrack(2);
     }
+
+    public void TimerSound()
+    {
+        PlayTrack(3);
+    }
 }

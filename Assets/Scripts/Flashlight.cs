@@ -26,6 +26,8 @@ public class Flashlight : MonoBehaviour
             MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
 
             musicManager.PlayerCaughtSound();
+
+            Destroy(GameObject.FindWithTag("Timer"));
         }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flashlight
   - Door
+  - Timer
   layers:
   - Default
   - TransparentFX
