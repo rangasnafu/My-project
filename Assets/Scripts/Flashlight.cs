@@ -23,6 +23,9 @@ public class Flashlight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            //if(Physics.Linecast(gameObject.transform.position,FirstPersonController.instance.gameObject.transform.position))
+            //{ 
+            //}    
             MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
 
             musicManager.PlayerCaughtSound();

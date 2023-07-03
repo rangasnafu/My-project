@@ -6,6 +6,8 @@ using TMPro;
 
 public class FirstPersonController : MonoBehaviour
 {
+    public static FirstPersonController instance;
+
     public CharacterController controller;
     public float walkSpeed = 3f;
     public float sprintSpeed = 6f;
@@ -41,6 +43,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         startPosition = transform.position;
         startRotation = transform.rotation;
 
@@ -176,6 +179,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+       
         if (collision.gameObject.CompareTag("Flashlight"))
         {
             //isCaught = true; // Set the flag to true to indicate that the player has been caught
